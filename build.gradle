@@ -43,6 +43,17 @@ publishing {
       from components.java
     }
   }
+  repositories {
+    maven {
+      name "nexus"
+      url "http://localhost:8081/repository/maven-releases"
+      allowInsecureProtocol = true
+      credentials {
+        username = project.repoUser
+        password = project.repoPassword
+      }
+    }
+  }
 }
 
 ext.checkstyleVersion = "10.20.1"
